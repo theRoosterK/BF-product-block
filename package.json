@@ -1,0 +1,14 @@
+{
+	"name": "bikefinder-blocks",
+	"version": "1.0.0",
+	"dependencies": {
+		"@accessible360/accessible-slick": "^1.0.1",
+		"@wordpress/env": "^8.9.0",
+		"@wordpress/scripts": "^26.14.0"
+	},
+	"scripts": {
+		"build": "wp-scripts build",
+		"start": "wp-scripts start",
+		"wp-env": "wp-env"
+	}
+}

@@ -1,0 +1,172 @@
+$flex-direction-breakpoint: 900px;
+
+/* Hide the image list within the editor, showing only the first one. */
+.wp-block-bikefinder-product .carousel:not(.slick-slider) > div {
+	display: none;
+
+	&:first-of-type {
+		display: block;
+	}
+}
+
+.wp-block-bikefinder-product {
+	@import 'components/slider/slider.scss';
+
+	.carousel img,
+	.slick-slide img {
+		object-fit: cover;
+		width: clamp(15rem, 100%, 27rem);
+		aspect-ratio: 4 / 3;
+		border: 2px solid #ffffff;
+	}
+	
+	display: flex;
+	font-family: var(--wp--preset--font-family--montserrat);
+	justify-content: space-between;
+	gap: 1rem;
+
+	@media screen and (max-width: $flex-direction-breakpoint) {
+		flex-direction: column;
+	}
+
+	.bikefinder-block-section {
+		width: 50%;
+
+		@media screen and (max-width: $flex-direction-breakpoint) {
+			width: 100%;
+		}
+	}
+
+	.terms {
+		font-size: var(--wp--preset--font-size--medium);
+		margin-top: 20px;
+		text-align: center;
+
+		span {
+			align-items: center;
+			display: flex;
+			gap: 10px;
+			justify-content: center;
+
+			&:before {
+				content: url('../assets/calendar.svg');
+				display: inline-block;
+				object-fit: cover;
+				width: 32px;
+				height: 32px;
+			}
+		}
+	}
+
+	.wp-block-heading {
+		margin: 0;
+		padding: 0;
+	}
+
+	.actions {
+		display: flex;
+		flex-direction: column;
+
+		.button {
+			background-color: var(--wp--preset--color--base);
+			border-radius: 25px;
+			border: 4px solid var(--wp--preset--color--primary);
+			color: var(--wp--preset--color--primary);
+			cursor: pointer;
+			font-size: var(--wp--preset--font-size--medium);
+			margin-bottom: 20px;
+			padding: 1rem 2rem;
+			text-align: center;
+			text-decoration: none;
+
+			&.primary {
+				background-color: var(--wp--preset--color--primary);
+				border-radius: 30px;
+				color: var(--wp--preset--color--base);
+			}
+		}
+
+		.secondary {
+			display: flex;
+			flex-direction: column;
+
+			> span {
+				display: block;
+				font-style: italic;
+				text-align: center;
+				width: 100%;
+			}
+		}
+	}
+
+	.reviews {
+		color: var(--wp--preset--color--tertiary);
+		font-size: 1rem;
+
+		[itemprop="reviewRating"] {
+			display: inline-block;
+
+			.rating {
+				position: relative;
+				display: inline-block;
+				color: #ccd6df;
+
+				&:not(.empty) {
+					&:before {
+						content: "★";
+					}
+				}
+
+				&.filled {
+					&:before {
+						width: 100%;
+					}
+				}
+
+				&:before {
+					display: block;
+					color: #ffd200;
+					top: 0;
+					left: 0;
+					position: absolute;
+					overflow: hidden;
+					width: 50%;
+				}
+			}
+		}
+	}
+
+	.price-meta {
+		margin: 20px 0;
+
+		.price {
+			font-size: 35px;
+			font-weight: 700;
+			color: var(--wp--preset--color--secondary);
+		}
+
+		.extras {
+			color: #555;
+			font-size: 16px;
+			font-weight: 400;
+		}
+
+		.stock {
+			color: #24d881;
+			font-style: italic;
+
+			&:before {
+				content: url('../assets/cart.svg');
+				margin-right: 5px;
+				width: 15px;
+				height: 15px;
+			}
+		}
+	}
+
+	.payment-methods {
+		display: block;
+		text-align: center;
+		width: 100%;
+	}
+}

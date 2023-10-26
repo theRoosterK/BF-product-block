@@ -1,0 +1,74 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "bikefinder/product",
+  "title": "BikeFinder Product",
+  "category": "widgets",
+  "icon": "cart",
+  "description": "Display a BikeFinder product hero",
+  "keywords": [
+    "price",
+    "product"
+  ],
+  "version": "1.0.0",
+  "textdomain": "bikefinder-product-block",
+  "attributes": {
+    "title": {
+      "type": "string",
+      "default": "BikeFinder Product"
+    },
+    "price": {
+      "type": "string",
+      "default": "# NOK"
+    },
+    "inStock": {
+      "type": "boolean",
+      "default": true
+    },
+    "showReviews": {
+      "type": "boolean",
+      "default": false
+    },
+    "rating": {
+      "type": "string",
+      "default": "5"
+    },
+    "reviews": {
+      "type": "integer",
+      "default": 0
+    },
+    "images": {
+      "type": "array",
+      "default": []
+    },
+    "primaryButtonText": {
+      "type": "string",
+      "default": "Buy tracker and choose subscription"
+    },
+    "secondaryButtons": {
+      "type": "array",
+      "default": []
+    }
+  },
+  "supports": {
+    "color": {
+      "text": true,
+      "background": true
+    },
+    "html": false,
+    "multiple": false
+  },
+  "example": {
+    "attributes": {
+      "price": 89,
+      "featured": true
+    }
+  },
+  "editorScript": "file:./index.js",
+  "style": "file:./style-index.css",
+  "viewScript": [
+    "jquery",
+    "file:./frontend.js"
+  ],
+  "render": "file:./block.php"
+}

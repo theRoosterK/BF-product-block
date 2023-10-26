@@ -1,0 +1,105 @@
+@import '@accessible360/accessible-slick/slick/slick.scss';
+
+.carousel {
+	margin-top: 1rem;
+}
+
+/* Override the Slick slider styling, which hides content for unknown reasons. */
+.slick-slide {
+	display: block;
+}
+
+/* Improved .sr-only class by ffoodd: https://gist.github.com/ffoodd/000b59f431e3e64e4ce1a24d5bb36034 */
+.slick-sr-only {
+	border: 0 !important;
+	clip: rect(1px, 1px, 1px, 1px) !important;
+	clip-path: inset(50%) !important;
+	height: 1px !important;
+	margin: -1px !important;
+	overflow: hidden !important;
+	padding: 0 !important;
+	position: absolute !important;
+	width: 1px !important;
+	white-space: nowrap !important;
+}
+
+.slick-slider {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	justify-items: center;
+	align-items: center;
+	position: relative;
+	margin-inline: auto;
+
+	@media screen and (max-width: 900px) {
+		max-width: 35rem;
+	}
+
+	.slick-autoplay-toggle-button {
+		display: none;
+	}
+
+	.slick-arrow {
+		max-width: 10%;
+		border: none;
+		background: none;
+		cursor: pointer;
+		width: 20px;
+		height: 20px;
+		position: absolute;
+
+		@media screen and (max-width: 480px) {
+			display: none;
+		}
+
+		&.slick-prev {
+			background-image: url('../assets/chevron-left.svg');
+			background-repeat: no-repeat;
+			background-size: 32%;
+			inset: auto auto auto 2rem;
+		}
+		&.slick-next {
+			background-image: url('../assets/chevron-right.svg');
+			background-repeat: no-repeat;
+			background-size: 32%;
+			background-position-x: right;
+			inset: auto 2rem auto auto;
+		}
+	}
+
+	.slick-list {
+		width: 70%;
+		margin-block-end: 1rem;
+	}
+
+	.slick-dots {
+		display: flex;
+		flex-direction: row;
+		list-style: none;
+		width: 100%;
+		gap: 8px;
+		justify-content: center;
+		margin: 0;
+		margin-top: -40px;
+		padding: 0;
+
+		li {
+			button {
+				cursor: pointer;
+				width: 8px;
+				height: 8px;
+				display: inline-block;
+				border-radius: 50%;
+				background: #000;
+				opacity: .2;
+				margin: 0;
+				padding: 0;
+			}
+
+			&.slick-active button {
+				opacity: 1;
+			}
+		}
+	}
+}
